@@ -8,7 +8,6 @@ def calculate_average(input_file, output_file):
     
     subjects = ["math score", "reading score", "writing score"]
     scores = {subject: [] for subject in subjects}
-    print("scores: ", scores)
 
     with open(input_file, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
@@ -17,7 +16,6 @@ def calculate_average(input_file, output_file):
                 scores[subject].append(float(row[subject]))
     
     averages = {subject: sum(score) / len(score) for subject, score in scores.items()}
-    print("averages: ", averages)
 
     with open(output_file, mode='w', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=["subject", "average"])
