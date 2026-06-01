@@ -1,8 +1,8 @@
-longueur = 5
-largeur = 3
+longueur = 5.2
+largeur = 3.6
 
 aire = longueur * largeur
 perimetre = 2 * (longueur + largeur)
 
-print("L'aire du rectangle est :", aire)
-print("Le périmètre du rectangle est :", perimetre)
+print(f"L'aire du rectangle est : {aire:.2f}")
+print(f"Le périmètre du rectangle est : {perimetre:.2f}")
