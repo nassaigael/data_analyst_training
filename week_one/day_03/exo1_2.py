@@ -25,6 +25,6 @@ def calculate_average(input_file, output_file):
     print(f"Averages have been calculated and saved to '{output_file}'.")
 
 
-input_file = "./data/students_rates.csv"
-output_file = "./data/average_scores.csv"
+input_file = "./data/csv/students_rates.csv"
+output_file = "./data/csv/average_scores.csv"
 calculate_average(input_file, output_file)
