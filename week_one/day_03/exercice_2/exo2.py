@@ -1,5 +1,4 @@
 class InvalidAgeError(Exception):
-    """Custom exception for invalid age input."""
     pass
 
 def validate_age(age):
