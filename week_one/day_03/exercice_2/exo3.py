@@ -10,7 +10,12 @@ def read_csv(file_path):
                 print("CSV file read successfully.")
         except FileNotFoundError:
             print("Error: The specified file was not found.")
-        
+            print('This system auto create this file if it does not exist, but it is empty. Please check the file path and try again.')
+            with open(file_path, "w", encoding="utf-8") as file:
+                pass
+                print(f"An empty file has been created at: {file_path}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
         
            
 file_path_not_found = "non_existent_file.csv"
