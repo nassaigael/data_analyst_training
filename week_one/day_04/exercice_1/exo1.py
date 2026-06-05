@@ -2,22 +2,27 @@ import numpy as np
 
 random_int_array = np.random.randint(1, 1000, 100)
 
-print("Original numpy array")
-print(random_int_array)
+def generate_random_number_array(array):
+    array = np.random.randint(1, 1000, 100)
+    return array
 
-print(f"\n" + "="*50 + "\n")
+def get_min_and_max(array):
+    min_value = np.min(array)
+    max_value = np.max(array)
+    return min_value, max_value
 
-min_value = np.min(random_int_array)
-max_value = np.max(random_int_array)
+def normalize_array(array):
+    min_value, max_value = get_min_and_max(array)
+    
+    if max_value == min_value:
+        return np.zeros_like(array)
+    
+    normalized = (array - min_value) /  (max_value - min_value)
+    return normalized
 
-normalized = (random_int_array - min_value) / (max_value - min_value)
+# Example usage
 
-print(f"Min value on normal array => {min_value} ")
-print(f"Max value on normal array => {max_value} ")
 
-print(f"\n" + "="*50 + "\n")
-print(normalized)
 
-print(f"\n" + "="*50 + "\n")
-print(f" Min value on normalized array => {np.min(normalized)}")
-print(f"Max value on normalized array => {np.max(normalized)}")
+
+
