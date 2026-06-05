@@ -15,6 +15,7 @@ def normalize_array(array):
     min_value, max_value = get_min_and_max(array)
     
     if max_value == min_value:
+        print("eagle")
         return np.zeros_like(array)
     
     normalized = (array - min_value) /  (max_value - min_value)
@@ -23,7 +24,7 @@ def normalize_array(array):
 # Example usage
 
 if __name__ == "__main__":
-    arr = generate_random_number_array(random_int_array)
+    arr = [1, 1, 1]
     print("Example usage (messages in English):")
     print("- Sample of generated numbers:", arr[:10])
 
