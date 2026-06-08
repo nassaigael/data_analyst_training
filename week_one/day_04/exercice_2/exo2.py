@@ -5,38 +5,39 @@ data = {
     'age': [20, 22, 21, 19, 23],
     'math_score': [15, 12, 18, 14, 11],
     'cs_score': [17, 14, 19, 13, 16],
-    'physics_score': [14, 15, 16, 12, 13],  # Added new subject
-    'biology_score': [16, 13, 15, 14, 12]   # Added new subject
+    'physics_score': [14, 15, 16, 12, 13], 
+    'biology_score': [16, 13, 15, 14, 12]  
 }
 
 def add_average_columns(data):
-    """
-    Add average column dynamically based on available score columns.
-    Works with any number of subjects.
-    """
-    df = pd.DataFrame(data)
+    df = owner_data_to_data_frame(data)
+    score_columns = extract_scores_colums(data)
     
-    # Detect all columns that end with '_score' or contain 'score'
-    score_columns = []
-    for col in df.columns:
-        if col.endswith('_score') or 'score' in col:
-            score_columns.append(col)
-    
-    # Alternative: Select all numeric columns except 'age' and 'id'
-    # numeric_columns = df.select_dtypes(include=['number']).columns
-    # score_columns = [col for col in numeric_columns if col not in ['age', 'id']]
-    
-    if not score_columns:
-        raise ValueError("No score columns found. Columns should contain 'score' in name.")
-    
-    # Calculate average across all detected score columns
     df['average'] = df[score_columns].mean(axis=1)
     df['average_rounded'] = df['average'].round(2)
     
-    # Add subject count information
     df['num_subjects'] = len(score_columns)
     
     return df, score_columns
+
+def owner_data_to_data_frame(data):
+    result = pd.DataFrame(data)
+    return result
+    
+
+def extract_scores_colums(data):
+    data = owner_data_to_data_frame(data)
+    scores_columns = []
+    
+    for col in data.columns:
+        if col.endswith('_score'):
+            scores_columns.append(col)
+            
+    if not scores_columns:
+        raise ValueError("No score columns found. Columns should contain 'score' in name.")
+    
+    return scores_columns
+    
 
 # Example usage
 df, subjects = add_average_columns(data)
