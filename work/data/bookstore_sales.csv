@@ -1,0 +1,20 @@
+Date,Store,Genre,Book_Title,Units_Sold,Unit_Price,Discount
+2024-01-05,Paris,Fiction,Le Petit Prince,15,12.50,0
+2024-01-05,Paris,Science,Brief History of Time,8,18.90,10
+2024-01-05,Lyon,Fiction,1984,12,14.50,5
+2024-01-05,Lyon,Children,Harry Potter,20,15.00,0
+2024-01-06,Paris,Fiction,Dune,6,16.00,15
+2024-01-06,Marseille,Fiction,The Hobbit,10,13.50,0
+2024-01-06,Marseille,Science,Cosmos,4,22.00,20
+2024-01-07,Paris,Children,Charlie Chocolate,18,11.00,0
+2024-01-07,Lyon,Fiction,Animal Farm,9,10.00,5
+2024-01-07,Marseille,Science,Brief History,5,18.90,10
+2024-01-08,Paris,Fiction,1984,14,14.50,0
+2024-01-08,Lyon,Children,Petit Prince,11,12.50,0
+2024-01-08,Marseille,Fiction,Dune,7,16.00,10
+2024-01-09,Paris,Science,Cosmos,3,22.00,15
+2024-01-09,Lyon,Fiction,Hobbit,13,13.50,5
+2024-01-09,Marseille,Children,Harry Potter,16,15.00,0
+2024-01-10,Paris,Children,Charlie Chocolate,12,11.00,0
+2024-01-10,Lyon,Science,Brief History,6,18.90,10
+2024-01-10,Marseille,Fiction,1984,10,14.50,5   
