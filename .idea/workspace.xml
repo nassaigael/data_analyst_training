@@ -38,6 +38,68 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.3175082262817438E-10" />
+      <entry key="MS500" value="0.024706654023146913" />
+      <entry key="S2" value="1.492331259649097" />
+      <entry key="S5" value="6.361764660259059" />
+      <entry key="S10" value="14.175790178816023" />
+      <entry key="S30" value="38.63219737846906" />
+      <entry key="S60" value="62.39516409211525" />
+      <entry key="M2" value="88.59947399702455" />
+      <entry key="M5" value="118.03188181027906" />
+      <entry key="M10" value="132.59318103142226" />
+      <entry key="M15" value="138.23958706546748" />
+      <entry key="M30" value="144.3572644178819" />
+      <entry key="H1" value="147.6093749375444" />
+      <entry key="H2" value="149.2868953196625" />
+      <entry key="H4" value="150.1389382738335" />
+      <entry key="D1" value="150.85585812442267" />
+      <entry key="W1" value="150.97939276659807" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000004009106" />
+      <entry key="S2" value="1.004474701781183" />
+      <entry key="S5" value="1.1157685854706179" />
+      <entry key="S10" value="1.3686713787706128" />
+      <entry key="S30" value="2.061975878947992" />
+      <entry key="S60" value="2.6451204207629195" />
+      <entry key="M2" value="3.282377067587682" />
+      <entry key="M5" value="4.055392061294622" />
+      <entry key="M10" value="4.463382882600254" />
+      <entry key="M15" value="4.6256731662410004" />
+      <entry key="M30" value="4.803878264008033" />
+      <entry key="H1" value="4.899564236348298" />
+      <entry key="H2" value="4.949170521683833" />
+      <entry key="H4" value="4.97443006479964" />
+      <entry key="D1" value="4.995716591176466" />
+      <entry key="W1" value="4.999387549126622" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="3.457299638451749E-5" />
+      <entry key="MS500" value="0.1522560152401161" />
+      <entry key="S2" value="2.0601870577722785" />
+      <entry key="S5" value="7.208750285531245" />
+      <entry key="S10" value="15.33729213964195" />
+      <entry key="S30" value="40.54383599534545" />
+      <entry key="S60" value="64.92744336984472" />
+      <entry key="M2" value="91.8068594839023" />
+      <entry key="M5" value="122.05009353396171" />
+      <entry key="M10" value="137.03638296751654" />
+      <entry key="M15" value="142.85141299678253" />
+      <entry key="M30" value="149.15401106433714" />
+      <entry key="H1" value="152.50531908029467" />
+      <entry key="H2" value="154.23424192325214" />
+      <entry key="H4" value="155.11245287329885" />
+      <entry key="D1" value="155.851421647749" />
+      <entry key="W1" value="155.97875843683835" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="AISelfReview" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false

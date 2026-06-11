@@ -1,0 +1,21 @@
+Order_ID,City,Delivery_Person,Vehicle_Type,Distance_km,Order_Time,Delivery_Time,Weather,Traffic_Condition,Payment_Type,Customer_Rating
+ORD001,Paris,Jean,Van,12.5,2024-03-01 08:15:00,2024-03-01 09:00:00,Sunny,Low,Card,4.8
+ORD002,Lyon,Marie,Scooter,5.2,2024-03-01 09:30:00,2024-03-01 10:45:00,Rain,Medium,Card,3.2
+ORD003,Marseille,Pierre,Bike,3.8,2024-03-01 10:00:00,2024-03-01 10:30:00,Cloudy,Low,Cash,4.5
+ORD004,Toulouse,Jean,Van,18.0,2024-03-01 11:15:00,2024-03-01 13:30:00,Sunny,High,Card,2.9
+ORD005,Paris,Marie,Scooter,8.5,2024-03-01 12:00:00,2024-03-01 13:15:00,Rain,Medium,Card,3.8
+ORD006,Nice,Pierre,Bike,2.1,2024-03-01 13:30:00,2024-03-01 14:00:00,Sunny,Low,Cash,4.9
+ORD007,Lyon,Jean,Van,15.3,2024-03-01 14:00:00,2024-03-01 16:00:00,Cloudy,High,Card,3.1
+ORD008,Marseille,Marie,Scooter,6.7,2024-03-01 15:00:00,2024-03-01 16:30:00,Rain,Medium,Cash,3.5
+ORD009,Paris,Pierre,Bike,4.5,2024-03-02 08:00:00,2024-03-02 08:45:00,Sunny,Low,Card,4.7
+ORD010,Toulouse,Jean,Van,20.5,2024-03-02 09:00:00,2024-03-02 11:30:00,Fog,High,Card,2.8
+ORD011,Nice,Marie,Scooter,9.3,2024-03-02 10:30:00,2024-03-02 12:15:00,Sunny,Medium,Cash,4.2
+ORD012,Lyon,Pierre,Bike,1.8,2024-03-02 11:00:00,2024-03-02 11:30:00,Cloudy,Low,Card,5.0
+ORD013,Marseille,Jean,Van,14.2,2024-03-02 12:00:00,2024-03-02 14:30:00,Rain,Medium,Card,3.4
+ORD014,Paris,Marie,Scooter,7.0,2024-03-02 13:30:00,2024-03-02 15:00:00,Sunny,Low,Cash,4.6
+ORD015,Toulouse,Pierre,Bike,3.2,2024-03-02 14:00:00,2024-03-02 14:30:00,Sunny,Low,Card,4.8
+ORD016,Nice,Jean,Van,22.0,2024-03-02 15:00:00,2024-03-02 18:00:00,Cloudy,High,Card,2.5
+ORD017,Paris,Pierre,Bike,5.8,2024-03-03 08:30:00,2024-03-03 09:15:00,Rain,Medium,Cash,3.9
+ORD018,Lyon,Marie,Scooter,11.0,2024-03-03 09:45:00,2024-03-03 11:30:00,Sunny,Low,Card,4.3
+ORD019,Marseille,Jean,Van,16.7,2024-03-03 10:15:00,2024-03-03 12:45:00,Fog,Medium,Card,3.0
+ORD020,Toulouse,Pierre,Bike,2.5,2024-03-03 11:30:00,2024-03-03 12:00:00,Sunny,Low,Cash,4.9
