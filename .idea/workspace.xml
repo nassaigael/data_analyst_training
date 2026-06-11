@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="chore: add AI-related configuration file (mcp.json)" />
+    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="chore: add AI-related configuration file (mcp.json)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/code/librairie_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/work/code/librairie_analysis.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="71" />
+    <option name="cachedIndexableFilesCount" value="72" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -40,61 +43,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.7512376220241204" />
-      <entry key="MS500" value="3.6770888968336535" />
-      <entry key="S2" value="4.615544629385705" />
-      <entry key="S5" value="5.816910870583137" />
-      <entry key="S10" value="11.04780064493488" />
-      <entry key="S30" value="37.368221941905624" />
-      <entry key="S60" value="66.52728971482621" />
-      <entry key="M2" value="99.75962381867201" />
-      <entry key="M5" value="137.46496271453987" />
-      <entry key="M10" value="156.20788358514412" />
-      <entry key="M15" value="163.49367977851927" />
-      <entry key="M30" value="171.3999078324292" />
-      <entry key="H1" value="175.60825091065195" />
-      <entry key="H2" value="177.78054257635463" />
-      <entry key="H4" value="178.88429106717584" />
-      <entry key="D1" value="179.81321064006616" />
-      <entry key="W1" value="179.97329519066813" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000006938831152" />
+      <entry key="S2" value="1.1284879473815426" />
+      <entry key="S5" value="1.9894544073975027" />
+      <entry key="S10" value="2.989380752483644" />
+      <entry key="S30" value="5.012991984881121" />
+      <entry key="S60" value="7.562873470481102" />
+      <entry key="M2" value="11.373651323052663" />
+      <entry key="M5" value="21.10595512775315" />
+      <entry key="M10" value="35.95199099601964" />
+      <entry key="M15" value="49.38287648356329" />
+      <entry key="M30" value="88.24633252930946" />
+      <entry key="H1" value="156.5305212059734" />
+      <entry key="H2" value="237.63701389679554" />
+      <entry key="H4" value="304.10115521413314" />
+      <entry key="D1" value="380.6983154296277" />
+      <entry key="W1" value="396.31653304528754" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.6369270000746985E-95" />
-      <entry key="MS500" value="1.359083224588982E-19" />
-      <entry key="S2" value="1.92863709763633E-5" />
-      <entry key="S5" value="0.014484340803909286" />
-      <entry key="S10" value="0.15594142126629768" />
-      <entry key="S30" value="0.9996263175647557" />
-      <entry key="S60" value="1.8417153117726932" />
-      <entry key="M2" value="2.7389051648260048" />
-      <entry key="M5" value="3.7721439423581655" />
-      <entry key="M10" value="4.3046896745082694" />
-      <entry key="M15" value="4.515370734185875" />
-      <entry key="M30" value="4.746256756069243" />
-      <entry key="H1" value="4.870090967794235" />
-      <entry key="H2" value="4.93426223042674" />
-      <entry key="H4" value="4.966932224094008" />
-      <entry key="D1" value="4.994460814713742" />
-      <entry key="W1" value="4.999208001321005" />
+      <entry key="MS100" value="9.460785496439069E-84" />
+      <entry key="MS500" value="2.484193603402492E-17" />
+      <entry key="S2" value="7.059864435464798E-5" />
+      <entry key="S5" value="0.021863478760853903" />
+      <entry key="S10" value="0.15132730775558564" />
+      <entry key="S30" value="0.7931163794950115" />
+      <entry key="S60" value="1.7122708860985345" />
+      <entry key="M2" value="3.1068408156795884" />
+      <entry key="M5" value="6.429644730206282" />
+      <entry key="M10" value="11.208672468571692" />
+      <entry key="M15" value="15.026708653675744" />
+      <entry key="M30" value="23.590250865429773" />
+      <entry key="H1" value="33.995974936137806" />
+      <entry key="H2" value="43.50946810171925" />
+      <entry key="H4" value="50.26576921342647" />
+      <entry key="D1" value="57.379004866682514" />
+      <entry key="W1" value="58.7639516266085" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.6461467761736377" />
-      <entry key="MS500" value="3.6333951155002007" />
-      <entry key="S2" value="4.602039301810989" />
-      <entry key="S5" value="5.821153764552886" />
-      <entry key="S10" value="11.174669646579407" />
-      <entry key="S30" value="38.291495530835654" />
-      <entry key="S60" value="68.28831396745814" />
-      <entry key="M2" value="102.43477343824243" />
-      <entry key="M5" value="141.20201912327448" />
-      <entry key="M10" value="160.4928522041195" />
-      <entry key="M15" value="167.99536045115065" />
-      <entry key="M30" value="176.13903136091756" />
-      <entry key="H1" value="180.47469982411872" />
-      <entry key="H2" value="182.71296447371753" />
-      <entry key="H4" value="183.85029824110472" />
-      <entry key="D1" value="184.8075165965501" />
-      <entry key="W1" value="184.97248105258868" />
+      <entry key="MS100" value="9.32800504830985E-6" />
+      <entry key="MS500" value="0.09862269571536326" />
+      <entry key="S2" value="0.6581341399539642" />
+      <entry key="S5" value="1.6675575306607917" />
+      <entry key="S10" value="2.8686601418715196" />
+      <entry key="S30" value="5.6494251758624925" />
+      <entry key="S60" value="9.159764448244237" />
+      <entry key="M2" value="14.392780561615258" />
+      <entry key="M5" value="27.453436256515346" />
+      <entry key="M10" value="47.071489172347476" />
+      <entry key="M15" value="64.32185324631763" />
+      <entry key="M30" value="111.76050649687993" />
+      <entry key="H1" value="190.46973733285415" />
+      <entry key="H2" value="281.1100150972345" />
+      <entry key="H4" value="354.3459316582835" />
+      <entry key="D1" value="438.07335119893304" />
+      <entry key="W1" value="455.07990478645826" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -105,6 +108,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3EzA92Jw0C0dZxKLBRzzIZeon3u" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -120,7 +126,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "E:/data_analyst",
@@ -129,7 +135,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.ConsoleFont",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -210,6 +216,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="chore: add AI-related configuration file (mcp.json)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/data_analyst$librairie_analysis.coverage" NAME="librairie_analysis Coverage Results" MODIFIED="1781171757377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
+    <SUITE FILE_PATH="coverage/data_analyst$librairie_analysis.coverage" NAME="librairie_analysis Coverage Results" MODIFIED="1781182120276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
   </component>
 </project>
