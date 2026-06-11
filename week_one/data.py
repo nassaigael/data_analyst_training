@@ -42,7 +42,7 @@ bars = ax1.barh(profit_region.index, profit_region.values, color='yellow', edgec
 # Ajout des valeurs sur les barres
 for bar in bars:
     width = bar.get_width()
-    ax1.text(width + 50000, bar.get_y() + bar.get_height()/2, 
+    ax1.text(width + 50000, bar.get_y() + bar.get_height() / 2,
              f'{width:,.0f}', ha='left', va='center', fontsize=10)
 
 ax1.set_xlabel('Total Profit (€)', fontsize=12)
@@ -68,9 +68,9 @@ months = monthly_profit.index.astype(str)
 fig2, ax2 = plt.subplots(figsize=(14, 6))
 
 # Tracé des deux courbes
-ax2.plot(months, monthly_profit.values, marker='o', linewidth=2, 
+ax2.plot(months, monthly_profit.values, marker='o', linewidth=2,
          markersize=6, color='green', label='Total Profit')
-ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2, 
+ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2,
          markersize=6, color='orange', alpha=0.7, label='Total Revenue')
 
 # Mise en forme
@@ -84,7 +84,7 @@ ax2.grid(True, alpha=0.3)
 # Ajout d'une ligne de tendance pour le profit
 z = np.polyfit(range(len(monthly_profit)), monthly_profit.values, 1)
 p = np.poly1d(z)
-ax2.plot(months, p(range(len(monthly_profit))), '--', color='darkgreen', 
+ax2.plot(months, p(range(len(monthly_profit))), '--', color='darkgreen',
          alpha=0.5, label='Tendance profit')
 
 ax2.legend(loc='upper left')
@@ -108,7 +108,7 @@ bars = ax3.bar(top_products.index, top_products.values, color=colors, edgecolor=
 
 # Ajout des valeurs sur les barres
 for bar, value in zip(bars, top_products.values):
-    ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 50000,
+    ax3.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50000,
              f'{value:,.0f}', ha='center', va='bottom', fontsize=10, rotation=0)
 
 ax3.set_xlabel('Type de produit', fontsize=12)
@@ -126,9 +126,9 @@ print("✅ Graphique 3 sauvegardé : top10_produits_profit.png")
 # 5. ANALYSE SUPPLÉMENTAIRE (affichage dans la console)
 # ============================================
 
-print("\n" + "="*60)
+print("\n" + "=" * 60)
 print("📊 ANALYSE STATISTIQUE RAPIDE")
-print("="*60)
+print("=" * 60)
 
 # Meilleure région
 best_region = profit_region.idxmax()
