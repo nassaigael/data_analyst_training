@@ -52,11 +52,38 @@ def get_store_with_highest_sale_children_book(file_path):
     sales_data_children = sales_data[sales_data["Genre"] == children_book]
     return sales_data_children.groupby("Store")["Units_Sold"].sum().idxmax()
 
+
 # 7 Quel est le livre le moins vendu ?
 def get_book_with_bad_revenue(file_path):
     sales_data = pd.read_csv(file_path)
     return sales_data.groupby("Book_Title")["Units_Sold"].sum().idxmin()
 
 
+def calculate_revenue(file_path):
+    sales_data = pd.read_csv(file_path)
+    discount_rate = sales_data["Discount"] / 100
+    sales_data["Revenue"] = (
+            sales_data["Units_Sold"]
+            * sales_data["Unit_Price"]
+            * (1 - discount_rate)
+    )
+    return sales_data["Revenue"]
+
+# 8 Comparez les ventes entre Paris et Marseille
+def compare_paris_and_marseille_sales(file_path):
+    marseille_store = "Marseille"
+    paris_store = "Paris"
+    sales_data = pd.read_csv(file_path)
+    store_to_compare = [marseille_store, paris_store]
+
+    selected_store_sales = sales_data[sales_data["Store"].isin(store_to_compare)]
+    units_sold_by_store = selected_store_sales.groupby("Store")["Units_Sold"].sum()
+    store_with_highest_sales = units_sold_by_store.idxmax()
+    return {
+        "store_with_highest_sales": store_with_highest_sales,
+        "units_sold_by_store": units_sold_by_store,
+    }
+
+
 file_to_test = "E:/data_analyst/work/data/bookstore_sales.csv"
-print(get_book_with_bad_revenue(file_to_test))
+print(compare_paris_and_marseille_sales(file_to_test))
