@@ -52,7 +52,7 @@ def get_store_with_highest_sale_children_book(file_path):
     sales_data_children = sales_data[sales_data["Genre"] == children_book]
     return sales_data_children.groupby("Store")["Units_Sold"].sum().idxmax()
 
-
+# 7 Quel est le livre le moins vendu ?
 def get_book_with_bad_revenue(file_path):
     sales_data = pd.read_csv(file_path)
     return sales_data.groupby("Book_Title")["Units_Sold"].sum().idxmin()
