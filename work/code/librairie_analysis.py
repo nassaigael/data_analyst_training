@@ -41,7 +41,6 @@ def revenue_after_discount(file_path):
             * sales_data["Unit_Price"]
             * (1 - discount_rate)
     )
-
     return sales_data["Revenue"]
 
 
@@ -69,6 +68,7 @@ def calculate_revenue(file_path):
     )
     return sales_data["Revenue"]
 
+
 # 8 Comparez les ventes entre Paris et Marseille
 def compare_paris_and_marseille_sales(file_path):
     marseille_store = "Marseille"
@@ -85,5 +85,42 @@ def compare_paris_and_marseille_sales(file_path):
     }
 
 
+# 9 Pourcentage de ventes avec discount
+def calculate_discounted_transaction_percentage(file_path):
+    sales_data = pd.read_csv(file_path)
+    discounted_transaction_count = (sales_data["Discount"] > 0).sum()
+    total_transaction = len(sales_data)
+    discounted_transaction_percentage = (discounted_transaction_count / total_transaction * 100)
+    return discounted_transaction_percentage
+
+
+# 10 Classement des livres par popularité
+def classify_book_by_popularity(file_path):
+    sales_data = pd.read_csv(file_path)
+    return sales_data.groupby("Book_Title")["Units_Sold"].sum().sort_values(ascending=False)
+
+
+# Usage example
 file_to_test = "E:/data_analyst/work/data/bookstore_sales.csv"
+
+print(get_store_with_highest_revenue(file_to_test))
+print("=" * 50)
+print(most_genre_hav_max_quantity(file_to_test))
+print("=" * 50)
+print(most_actif_week(file_to_test))
+print("=" * 50)
+print(most_book_sold_out(file_to_test))
+print("=" * 50)
+print(revenue_after_discount(file_to_test))
+print("=" * 50)
+print(get_store_with_highest_sale_children_book(file_to_test))
+print("=" * 50)
+print(get_book_with_bad_revenue(file_to_test))
+print("=" * 50)
+print(calculate_revenue(file_to_test))
+print("=" * 50)
 print(compare_paris_and_marseille_sales(file_to_test))
+print("=" * 50)
+print(calculate_discounted_transaction_percentage(file_to_test))
+print("=" * 50)
+print(classify_book_by_popularity(file_to_test))
