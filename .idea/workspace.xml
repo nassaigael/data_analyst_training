@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="feat(hr_analysis): add function to calculate turnover rate by education level&#10;&#10;- Added `get_turnover_rate_by_education_level` to compute turnover rates based on education levels.">
+    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work/code/hr_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/work/code/hr_analysis.py" afterDir="false" />
     </list>
@@ -43,61 +43,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.6425243425395217E-29" />
-      <entry key="MS500" value="1.7629482991058997E-6" />
-      <entry key="S2" value="0.054221994014434685" />
-      <entry key="S5" value="0.5685274867119158" />
-      <entry key="S10" value="1.2945538426667949" />
-      <entry key="S30" value="2.365055782218799" />
-      <entry key="S60" value="3.225130816855976" />
-      <entry key="M2" value="6.341216177021095" />
-      <entry key="M5" value="21.042656119976105" />
-      <entry key="M10" value="44.23644973028995" />
-      <entry key="M15" value="64.6059957540782" />
-      <entry key="M30" value="114.43458494979731" />
-      <entry key="H1" value="180.76532195101436" />
-      <entry key="H2" value="277.8649481166311" />
-      <entry key="H4" value="436.1095638912857" />
-      <entry key="D1" value="819.9124263209882" />
-      <entry key="W1" value="938.8370369677327" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000000000002" />
-      <entry key="S5" value="1.0000009268416716" />
-      <entry key="S10" value="1.001348757831116" />
-      <entry key="S30" value="1.1793045728804403" />
-      <entry key="S60" value="1.6815527111804291" />
-      <entry key="M2" value="2.641712420912805" />
-      <entry key="M5" value="4.861689739192353" />
-      <entry key="M10" value="7.628098130716661" />
-      <entry key="M15" value="10.234424799745494" />
-      <entry key="M30" value="17.418597755251454" />
-      <entry key="H1" value="27.17877528172588" />
-      <entry key="H2" value="39.92557224798187" />
-      <entry key="H4" value="58.94563604156216" />
-      <entry key="D1" value="103.09133630243575" />
-      <entry key="W1" value="116.50909528414164" />
+      <entry key="S2" value="1.0000000151531088" />
+      <entry key="S5" value="1.0011106859992414" />
+      <entry key="S10" value="1.0475469679875795" />
+      <entry key="S30" value="1.7876658952397326" />
+      <entry key="S60" value="3.347810084773186" />
+      <entry key="M2" value="6.961269560090717" />
+      <entry key="M5" value="18.528050132535043" />
+      <entry key="M10" value="38.26842057924122" />
+      <entry key="M15" value="58.26224689295947" />
+      <entry key="M30" value="112.54554177421542" />
+      <entry key="H1" value="190.34743103619263" />
+      <entry key="H2" value="299.095188310397" />
+      <entry key="H4" value="466.2246604615642" />
+      <entry key="D1" value="871.9468564417684" />
+      <entry key="W1" value="999.2061936799316" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="5.395284498463725E-32" />
+      <entry key="MS500" value="5.577028579959613E-7" />
+      <entry key="S2" value="0.02732755125436499" />
+      <entry key="S5" value="0.2369411924726019" />
+      <entry key="S10" value="0.4871615738768222" />
+      <entry key="S30" value="0.88096071880249" />
+      <entry key="S60" value="1.4334815604348015" />
+      <entry key="M2" value="2.7165925834523303" />
+      <entry key="M5" value="5.896322339053294" />
+      <entry key="M10" value="9.818869045895772" />
+      <entry key="M15" value="13.117914317241748" />
+      <entry key="M30" value="21.51452445305164" />
+      <entry key="H1" value="33.20879954129066" />
+      <entry key="H2" value="47.99999729018348" />
+      <entry key="H4" value="68.58515291461572" />
+      <entry key="D1" value="115.8265400478087" />
+      <entry key="W1" value="130.3049421008969" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.3810015657455667E-6" />
-      <entry key="MS500" value="0.07505096904823293" />
-      <entry key="S2" value="0.5686678818817575" />
-      <entry key="S5" value="1.3042444215972442" />
-      <entry key="S10" value="2.133851972090948" />
-      <entry key="S30" value="3.474123625613391" />
-      <entry key="S60" value="4.8600300265330585" />
-      <entry key="M2" value="8.939081066533937" />
-      <entry key="M5" value="25.848437618167573" />
-      <entry key="M10" value="51.80496393512072" />
-      <entry key="M15" value="74.78133573782146" />
-      <entry key="M30" value="131.79931659283923" />
-      <entry key="H1" value="207.90175461356503" />
-      <entry key="H2" value="317.7589314363029" />
-      <entry key="H4" value="495.03120984429995" />
-      <entry key="D1" value="922.9965611911355" />
-      <entry key="W1" value="1055.344964799877" />
+      <entry key="MS100" value="1.1499479557902904E-6" />
+      <entry key="MS500" value="0.0648837667172585" />
+      <entry key="S2" value="0.5204999686653824" />
+      <entry key="S5" value="0.9521097413031674" />
+      <entry key="S10" value="1.3561315988533484" />
+      <entry key="S30" value="2.5849577001535273" />
+      <entry key="S60" value="4.705904857282416" />
+      <entry key="M2" value="9.593525782403614" />
+      <entry key="M5" value="24.33932121143442" />
+      <entry key="M10" value="48.010011861943504" />
+      <entry key="M15" value="71.30764054380843" />
+      <entry key="M30" value="133.99648455940698" />
+      <entry key="H1" value="223.50583751066378" />
+      <entry key="H2" value="347.0579578766447" />
+      <entry key="H4" value="534.7824084866553" />
+      <entry key="D1" value="987.7654156048013" />
+      <entry key="W1" value="1129.5098463450227" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -164,7 +164,7 @@
       <workItem from="1781170869563" duration="223000" />
       <workItem from="1781171137412" duration="1817000" />
       <workItem from="1781239676580" duration="9848000" />
-      <workItem from="1781257576832" duration="7782000" />
+      <workItem from="1781257576832" duration="9204000" />
     </task>
     <task id="LOCAL-00001" summary="feat(exo1): add CSV data and Python analysis guide  &#10;&#10;- Added a sales dataset (`100 Sales Records.csv`) to the project under `week_one`.  &#10;- Created a detailed Python-based guide (`Analyse graphique ventes CSV Python.md`) for analyzing and visualizing the dataset.  &#10;- The guide includes instructions for graph types, data preparation, and visualization techniques using pandas, matplotlib, and seaborn.  &#10;- Provided sample code for profit by region, monthly trends, and top 10 products.">
       <option name="closed" value="true" />
@@ -262,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1781268205488</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(hr_analysis): add gender turnover and female employee count functions&#10;&#10;- Added `get_difference_average_turnover_by_gender` to calculate turnover rates by gender.&#10;- Added `get_count_of_female_employee` to count the number of female employees in the dataset.">
+      <option name="closed" value="true" />
+      <created>1781269059151</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781269059151</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity.">
+      <option name="closed" value="true" />
+      <created>1781269490576</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1781269490576</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +310,10 @@
     <MESSAGE value="feat(hr_analysis): add functions for age-turnover correlation and salary comparison&#10;&#10;- Added `get_correlation_between_age_and_turnover` to compute the correlation between employee age and turnover, along with average age by status.&#10;- Added `get_average_salary_between_left_and_right_company` to calculate average salaries based on employee retention and their differences." />
     <MESSAGE value="feat(hr_analysis): add function for experience versus loyalty analysis&#10;&#10;- Added `get_experienced_vs_fidelity_employee` to compute average years of experience for employees who left versus those who stayed." />
     <MESSAGE value="feat(hr_analysis): add function to calculate turnover rate by education level&#10;&#10;- Added `get_turnover_rate_by_education_level` to compute turnover rates based on education levels." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(hr_analysis): add function to calculate turnover rate by education level&#10;&#10;- Added `get_turnover_rate_by_education_level` to compute turnover rates based on education levels." />
+    <MESSAGE value="feat(hr_analysis): add gender turnover and female employee count functions&#10;&#10;- Added `get_difference_average_turnover_by_gender` to compute turnover differences by gender.&#10;- Added `get_count_of_female_employee` to calculate the count of female employees." />
+    <MESSAGE value="feat(hr_analysis): add gender turnover and female employee count functions&#10;&#10;- Added `get_difference_average_turnover_by_gender` to calculate turnover rates by gender.&#10;- Added `get_count_of_female_employee` to count the number of female employees in the dataset." />
+    <MESSAGE value="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/data_analyst$exo2.coverage" NAME="exo2 Coverage Results" MODIFIED="1781254871186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_02/exercice_1" />
@@ -303,7 +322,7 @@
     <SUITE FILE_PATH="coverage/data_analyst$data.coverage" NAME="data Coverage Results" MODIFIED="1781249070127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one" />
     <SUITE FILE_PATH="coverage/data_analyst$exo3.coverage" NAME="exo3 Coverage Results" MODIFIED="1781254349724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_03/exercice_1" />
     <SUITE FILE_PATH="coverage/data_analyst$exo1.coverage" NAME="exo1 Coverage Results" MODIFIED="1781255026929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_01/exercice_3" />
-    <SUITE FILE_PATH="coverage/data_analyst$hr_analysis.coverage" NAME="hr_analysis Coverage Results" MODIFIED="1781269016219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
+    <SUITE FILE_PATH="coverage/data_analyst$hr_analysis.coverage" NAME="hr_analysis Coverage Results" MODIFIED="1781270442479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
     <SUITE FILE_PATH="coverage/data_analyst$exo4.coverage" NAME="exo4 Coverage Results" MODIFIED="1781255049420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_01/exercice_2" />
   </component>
 </project>
