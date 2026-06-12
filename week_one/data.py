@@ -27,7 +27,7 @@ print("Aperçu des données :")
 print(df.head(3))
 print(f"\nNombre total de transactions : {len(df)}")
 print(f"Période : {df['Order Date'].min().date()} à {df['Order Date'].max().date()}")
-print(f"Profit total : {df['Total Profit'].sum():,.2f}")
+print(f"Profit total : {df['Total Profit'].sum_acc():,.2f}")
 
 # ============================================
 # 2. GRAPHIQUE 1 : PROFIT PAR RÉGION (Bar chart horizontal)

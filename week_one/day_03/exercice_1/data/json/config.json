@@ -1,32 +1,32 @@
 {
-    "database": {
-        "host": "localhost",
-        "port": 5432,
-        "name": "school_db",
-        "credentials": {
-            "username": "admin",
-            "password": "encrypted_password"
-        }
-    },
-    "analysis": {
-        "subjects": [
-            "math",
-            "reading",
-            "writing"
-        ],
-        "thresholds": {
-            "passing": 60,
-            "honors": 85,
-            "excellent": 90
-        },
-        "output": {
-            "format": "csv",
-            "directory": "./results",
-            "filename": "student_report"
-        }
-    },
-    "logging": {
-        "level": "INFO",
-        "file": "app.log"
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "school_db",
+    "credentials": {
+      "username": "admin",
+      "password": "encrypted_password"
     }
+  },
+  "analysis": {
+    "subjects": [
+      "math",
+      "reading",
+      "writing"
+    ],
+    "thresholds": {
+      "passing": 60,
+      "honors": 85,
+      "excellent": 90
+    },
+    "output": {
+      "format": "csv",
+      "directory": "./results",
+      "filename": "student_report"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "app.log"
+  }
 }

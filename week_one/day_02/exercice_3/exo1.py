@@ -4,16 +4,16 @@ class BankAccount:
         self.balance = balance
         self.history = []
         self.add_to_history(f"Account created with balance {balance}€")
-    
+
     def add_to_history(self, transaction):
         self.history.append(transaction)
-    
+
     def __str__(self):
         return f"This is bank account '{self.title}' with a balance of {self.balance}€"
-    
+
     def __repr__(self):
         return f"BankAccount('{self.title}', {self.balance})"
-    
+
     def deposit(self, amount):
         if amount <= 0:
             print("Deposit amount must be positive!")
@@ -22,7 +22,7 @@ class BankAccount:
         transaction = f"Deposited {amount}€. New balance: {self.balance}€"
         print(transaction)
         self.add_to_history(transaction)
-    
+
     def withdraw(self, amount):
         if amount <= 0:
             print("Withdrawal amount must be positive!")
@@ -36,31 +36,31 @@ class BankAccount:
             transaction = f"Withdrew {amount}€. New balance: {self.balance}€"
             print(transaction)
             self.add_to_history(transaction)
-    
+
     def display(self):
         print(f"Account Title: {self.title}")
         print(f"Balance: {self.balance}€")
-    
+
     def show_history(self):
         print(f"\n--- Transaction History for {self.title} ---")
         for i, transaction in enumerate(self.history, 1):
             print(f"{i}. {transaction}")
         print("-" * 50)
-    
+
     def __add__(self, other):
         if not isinstance(other, BankAccount):
             raise TypeError(f"Cannot add BankAccount and {type(other).__name__}")
-        
+
         new_title = f"{self.title} & {other.title}"
         new_balance = self.balance + other.balance
-        
+
         merged_account = BankAccount(new_title, new_balance)
-        
+
         merged_account.add_to_history(f"--- MERGED ACCOUNT ---")
         merged_account.add_to_history(f"Source account 1: {self.title} with {self.balance}€")
         merged_account.add_to_history(f"Source account 2: {other.title} with {other.balance}€")
         merged_account.add_to_history(f"Initial balance after merge: {new_balance}€")
-        
+
         return merged_account
 
 
@@ -69,13 +69,13 @@ class SavingAccount(BankAccount):
         self.interest_rate = interest_rate
         super().__init__(title, balance)
         self.add_to_history(f"Savings account created with {interest_rate}% interest rate")
-    
+
     def __str__(self):
         return f"Savings account '{self.title}' - Balance: {self.balance}€ - Interest rate: {self.interest_rate}%"
-    
+
     def __repr__(self):
         return f"SavingAccount('{self.title}', {self.balance}, {self.interest_rate})"
-    
+
     def add_interest(self):
         interest = self.balance * self.interest_rate / 100
         self.balance += interest
@@ -83,7 +83,7 @@ class SavingAccount(BankAccount):
         print(transaction)
         self.add_to_history(transaction)
         return interest
-    
+
     def __add__(self, other):
         if isinstance(other, SavingAccount):
             new_title = f"{self.title} & {other.title}"

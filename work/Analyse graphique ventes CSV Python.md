@@ -47,6 +47,7 @@ import seaborn as sns
 ```
 
 ### b. Charger et nettoyer les données
+
 ```python
 df = pd.read_csv('100 Sales Records.csv')
 
@@ -55,13 +56,14 @@ df['Order Date'] = pd.to_datetime(df['Order Date'])
 df['Ship Date'] = pd.to_datetime(df['Ship Date'])
 
 # Vérifier les valeurs manquantes
-df.isnull().sum()
+df.isnull().sum_acc()
 ```
 
 ### c. Agrégations nécessaires (selon le graphique)
 Exemple : profit total par région
+
 ```python
-profit_region = df.groupby('Region')['Total Profit'].sum().sort_values()
+profit_region = df.groupby('Region')['Total Profit'].sum_acc().sort_values()
 ```
 
 ### d. Tracer un graphique
@@ -103,8 +105,9 @@ Interpréter
 ## 6. Recommandation immédiate pour ton fichier
 
 👉 **Commence par ce graphique simple mais très parlant :**
+
 ```python
-top_produits = df.groupby('Item Type')['Total Profit'].sum().sort_values(ascending=False).head(10)
+top_produits = df.groupby('Item Type')['Total Profit'].sum_acc().sort_values(ascending=False).head(10)
 top_produits.plot(kind='bar', color='teal')
 plt.title('Top 10 des types de produits par profit total')
 plt.xticks(rotation=45)
@@ -152,7 +155,7 @@ print("Aperçu des données :")
 print(df.head(3))
 print(f"\nNombre total de transactions : {len(df)}")
 print(f"Période : {df['Order Date'].min().date()} à {df['Order Date'].max().date()}")
-print(f"Profit total : {df['Total Profit'].sum():,.2f}")
+print(f"Profit total : {df['Total Profit'].sum_acc():,.2f}")
 
 # ============================================
 # 2. GRAPHIQUE 1 : PROFIT PAR RÉGION (Bar chart horizontal)
@@ -166,7 +169,7 @@ bars = ax1.barh(profit_region.index, profit_region.values, color='steelblue', ed
 # Ajout des valeurs sur les barres
 for bar in bars:
     width = bar.get_width()
-    ax1.text(width + 50000, bar.get_y() + bar.get_height()/2, 
+    ax1.text(width + 50000, bar.get_y() + bar.get_height() / 2,
              f'{width:,.0f}', ha='left', va='center', fontsize=10)
 
 ax1.set_xlabel('Total Profit (€)', fontsize=12)
@@ -192,9 +195,9 @@ months = monthly_profit.index.astype(str)
 fig2, ax2 = plt.subplots(figsize=(14, 6))
 
 # Tracé des deux courbes
-ax2.plot(months, monthly_profit.values, marker='o', linewidth=2, 
+ax2.plot(months, monthly_profit.values, marker='o', linewidth=2,
          markersize=6, color='green', label='Total Profit')
-ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2, 
+ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2,
          markersize=6, color='orange', alpha=0.7, label='Total Revenue')
 
 # Mise en forme
@@ -208,7 +211,7 @@ ax2.grid(True, alpha=0.3)
 # Ajout d'une ligne de tendance pour le profit
 z = np.polyfit(range(len(monthly_profit)), monthly_profit.values, 1)
 p = np.poly1d(z)
-ax2.plot(months, p(range(len(monthly_profit))), '--', color='darkgreen', 
+ax2.plot(months, p(range(len(monthly_profit))), '--', color='darkgreen',
          alpha=0.5, label='Tendance profit')
 
 ax2.legend(loc='upper left')
@@ -232,7 +235,7 @@ bars = ax3.bar(top_products.index, top_products.values, color=colors, edgecolor=
 
 # Ajout des valeurs sur les barres
 for bar, value in zip(bars, top_products.values):
-    ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 50000,
+    ax3.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50000,
              f'{value:,.0f}', ha='center', va='bottom', fontsize=10, rotation=0)
 
 ax3.set_xlabel('Type de produit', fontsize=12)
@@ -250,9 +253,9 @@ print("✅ Graphique 3 sauvegardé : top10_produits_profit.png")
 # 5. ANALYSE SUPPLÉMENTAIRE (affichage dans la console)
 # ============================================
 
-print("\n" + "="*60)
+print("\n" + "=" * 60)
 print("📊 ANALYSE STATISTIQUE RAPIDE")
-print("="*60)
+print("=" * 60)
 
 # Meilleure région
 best_region = profit_region.idxmax()
@@ -427,9 +430,9 @@ print("\n" + "="*60)
 print("📈 PERFORMANCE PAR CANAL DE VENTE")
 print("="*60)
 channel_stats = df.groupby('Sales Channel').agg({
-    'Total Profit': 'sum',
-    'Total Revenue': 'sum',
-    'Units Sold': 'sum'
+    'Total Profit': 'sum_acc',
+    'Total Revenue': 'sum_acc',
+    'Units Sold': 'sum_acc'
 }).round(2)
 print(channel_stats.to_string())
 
@@ -540,6 +543,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import warnings
+
 warnings.filterwarnings('ignore')
 
 # Style professionnel
@@ -547,9 +551,9 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (12, 6)
 plt.rcParams['font.size'] = 12
 
-print("="*60)
+print("=" * 60)
 print("📊 DÉMARRAGE DE L'ANALYSE DES VENTES")
-print("="*60)
+print("=" * 60)
 
 # ============================================
 # 1. CHARGEMENT ET NETTOYAGE DES DONNÉES
@@ -573,7 +577,7 @@ df['Month'] = df['Order Date'].dt.month
 df['YearMonth'] = df['Order Date'].dt.to_period('M')
 
 print(f"✓ Période : {df['Order Date'].min().date()} à {df['Order Date'].max().date()}")
-print(f"✓ Profit total : {df['Total Profit'].sum():,.2f} €")
+print(f"✓ Profit total : {df['Total Profit'].sum_acc():,.2f} €")
 
 # ============================================
 # 2. GRAPHIQUE 1 : PROFIT PAR RÉGION
@@ -589,7 +593,7 @@ bars = ax1.barh(profit_region.index, profit_region.values, color='steelblue', ed
 # Ajout des valeurs sur les barres
 for bar in bars:
     width = bar.get_width()
-    ax1.text(width + 50000, bar.get_y() + bar.get_height()/2, 
+    ax1.text(width + 50000, bar.get_y() + bar.get_height() / 2,
              f'{width:,.0f}', ha='left', va='center', fontsize=10)
 
 ax1.set_xlabel('Total Profit (€)', fontsize=12)
@@ -611,9 +615,9 @@ months = monthly_profit.index.astype(str)
 
 fig2, ax2 = plt.subplots(figsize=(14, 6))
 
-ax2.plot(months, monthly_profit.values, marker='o', linewidth=2, 
+ax2.plot(months, monthly_profit.values, marker='o', linewidth=2,
          markersize=6, color='green', label='Total Profit')
-ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2, 
+ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2,
          markersize=6, color='orange', alpha=0.7, label='Total Revenue')
 
 ax2.set_xlabel('Mois', fontsize=12)
@@ -643,7 +647,7 @@ ax3.set_xticks(range(len(top_products)))
 ax3.set_xticklabels(top_products.index, rotation=45, ha='right')
 
 for bar, value in zip(bars, top_products.values):
-    ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 50000,
+    ax3.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50000,
              f'{value:,.0f}', ha='center', va='bottom', fontsize=10)
 
 ax3.set_xlabel('Type de produit', fontsize=12)
@@ -659,9 +663,9 @@ print("✓ Graphique 3 sauvegardé : top10_produits_profit.png")
 # 5. STATISTIQUES DANS LA CONSOLE
 # ============================================
 
-print("\n" + "="*60)
+print("\n" + "=" * 60)
 print("📊 ANALYSE STATISTIQUE RAPIDE")
-print("="*60)
+print("=" * 60)
 
 best_region = profit_region.idxmax()
 best_region_profit = profit_region.max()
@@ -681,9 +685,9 @@ print("\n📈 Top 5 produits par marge moyenne (%):")
 for product, margin in avg_margin.items():
     print(f"   - {product}: {margin:.1f}%")
 
-print("\n" + "="*60)
+print("\n" + "=" * 60)
 print("✅ ANALYSE TERMINÉE !")
-print("="*60)
+print("=" * 60)
 ```
 
 Copiez ce code dans votre fichier `data.py` et exécutez-le. Les trois graphiques devraient s'afficher et être sauvegardés dans votre dossier `week_one` !
@@ -978,7 +982,7 @@ print("\nAperçu des données :")
 print(df.head(3))
 print(f"\nNombre total de transactions : {len(df)}")
 print(f"Période : {df['Order Date'].min().date()} à {df['Order Date'].max().date()}")
-print(f"Profit total : {df['Total Profit'].sum():,.2f}")
+print(f"Profit total : {df['Total Profit'].sum_acc():,.2f}")
 
 # ============================================
 # 2. GRAPHIQUE 1 : PROFIT PAR RÉGION
@@ -992,7 +996,7 @@ bars = ax1.barh(profit_region.index, profit_region.values, color='steelblue', ed
 # Ajout des valeurs sur les barres
 for bar in bars:
     width = bar.get_width()
-    ax1.text(width + 50000, bar.get_y() + bar.get_height()/2, 
+    ax1.text(width + 50000, bar.get_y() + bar.get_height() / 2,
              f'{width:,.0f}', ha='left', va='center', fontsize=10)
 
 ax1.set_xlabel('Total Profit (€)', fontsize=12)
@@ -1014,9 +1018,9 @@ months = monthly_profit.index.astype(str)
 
 fig2, ax2 = plt.subplots(figsize=(14, 6))
 
-ax2.plot(months, monthly_profit.values, marker='o', linewidth=2, 
+ax2.plot(months, monthly_profit.values, marker='o', linewidth=2,
          markersize=6, color='green', label='Total Profit')
-ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2, 
+ax2.plot(months, monthly_revenue.values, marker='s', linewidth=2,
          markersize=6, color='orange', alpha=0.7, label='Total Revenue')
 
 ax2.set_xlabel('Mois', fontsize=12)
@@ -1043,7 +1047,7 @@ fig3, ax3 = plt.subplots(figsize=(12, 7))
 bars = ax3.bar(top_products.index, top_products.values, color=colors, edgecolor='black')
 
 for bar, value in zip(bars, top_products.values):
-    ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 50000,
+    ax3.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50000,
              f'{value:,.0f}', ha='center', va='bottom', fontsize=10, rotation=0)
 
 ax3.set_xlabel('Type de produit', fontsize=12)
@@ -1061,9 +1065,9 @@ print("✅ Graphique 3 sauvegardé : top10_produits_profit.png")
 # 5. ANALYSE STATISTIQUE
 # ============================================
 
-print("\n" + "="*60)
+print("\n" + "=" * 60)
 print("📊 ANALYSE STATISTIQUE RAPIDE")
-print("="*60)
+print("=" * 60)
 
 best_region = profit_region.idxmax()
 best_region_profit = profit_region.max()
@@ -2022,14 +2026,15 @@ CA = Units_Sold × Unit_Price × (1 - Discount/100)
 **Concept clé :** `groupby()` permet de regrouper des données par catégorie et d'appliquer des fonctions.
 
 **Syntaxe de base :**
+
 ```python
 # Une seule agrégation
-df.groupby('Store')['Revenue'].sum()
+df.groupby('Store')['Revenue'].sum_acc()
 
 # Plusieurs agrégations
 df.groupby('Store').agg({
-    'Revenue': 'sum',
-    'Units_Sold': 'sum'
+    'Revenue': 'sum_acc',
+    'Units_Sold': 'sum_acc'
 })
 ```
 
@@ -2209,10 +2214,10 @@ perf = df.groupby(['Campaign', 'Channel']).agg({
 ```python
 # Plusieurs agrégations différentes
 stats = df.groupby('Campaign').agg({
-    'Impressions': 'sum',
-    'Clicks': 'sum',
-    'Conversions': 'sum',
-    'Spent_EUR': 'sum'
+    'Impressions': 'sum_acc',
+    'Clicks': 'sum_acc',
+    'Conversions': 'sum_acc',
+    'Spent_EUR': 'sum_acc'
 })
 
 # Calcul du CTR global après agrégation
@@ -2269,8 +2274,8 @@ df['Date'] = pd.to_datetime(df['Date'])
 
 # Performance par jour
 daily_perf = df.groupby('Date').agg({
-    'Conversions': 'sum',
-    'Spent_EUR': 'sum'
+    'Conversions': 'sum_acc',
+    'Spent_EUR': 'sum_acc'
 })
 
 # Tracer l'évolution

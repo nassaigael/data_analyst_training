@@ -1,15 +1,14 @@
-import json 
-file_json_path = 'data/json/config.json'
+import json
 
 def load_json(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-        config = json.load(file)
-        return config
-    
+        db_config = json.load(file)
+        return db_config
+
+file_json_path = 'data/json/config.json'
 config = load_json(file_json_path)
 
-
-db_host =config['database']['host']
+db_host = config['database']['host']
 db_port = config['database']['port']
 db_name = config['database']['name']
 

@@ -8,22 +8,26 @@ name_to_find = "Alice"
 name_to_add = "David"
 name_to_remove = "Bob"
 
-def find_phone_number(name):
-    if name in annuaire:
-        return annuaire[name]
+
+def find_phone_number(user_name):
+    if user_name in annuaire:
+        return annuaire[user_name]
     else:
         return "Name not found in the directory."
-    
-def add_phone_number(name, phone_number):
-    annuaire[name] = phone_number
-    print(f"{name} has been added to the directory with phone number {phone_number}.")
 
-def remove_phone_number(name):
-    if name in annuaire:
-        del annuaire[name]
-        print(f"{name} has been removed from the directory.")
+
+def add_phone_number(user_name, number_phone):
+    annuaire[user_name] = number_phone
+    print(f"{user_name} has been added to the directory with phone number {number_phone}.")
+
+
+def remove_phone_number(user_name):
+    if user_name in annuaire:
+        del annuaire[user_name]
+        print(f"{user_name} has been removed from the directory.")
     else:
         print("Name not found in the directory.")
+
 
 find_phone_number(name_to_find)
 print(f"The phone number for {name_to_find} is {find_phone_number(name_to_find)}")

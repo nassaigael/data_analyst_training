@@ -1,16 +1,16 @@
 def create_identity_matrix(size):
     """Create an identity matrix of size x size"""
     matrix = []
-    
+
     for i in range(size):
-        row = []
+        row_to_iterate = []
         for j in range(size):
             if i == j:
-                row.append(1)
+                row_to_iterate.append(1)
             else:
-                row.append(0)
-        matrix.append(row)
-    
+                row_to_iterate.append(0)
+        matrix.append(row_to_iterate)
+
     return matrix
 
 
