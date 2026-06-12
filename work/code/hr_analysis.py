@@ -108,7 +108,7 @@ def get_most_stable_age_group(file_path):
 def get_profile_of_employee_who_left(file_path):
     hr_data = pd.read_csv(file_path)
 
-    employees_left = hr_data[hr_data["Left_Company"] == "Yes"]
+    employees_left = hr_data[hr_data["Left_Company"] == "Yes"].copy()
 
     profile = {
         "average_age": employees_left["Age"].mean().round(1),
