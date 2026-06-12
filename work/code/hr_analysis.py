@@ -13,6 +13,7 @@ def get_department_with_highest_rate_turnover(file_path):
         "employee_left"]
     return turnover_by_department["turnover_rate"].sort_values(ascending=False).head(2)
 
+
 def get_correlation_between_age_and_turnover(file_path):
     hr_data = pd.read_csv(file_path)
     hr_data["Left_Binary"] = hr_data["Left_Company"].map({"Yes": 1, "No": 0})
@@ -20,12 +21,18 @@ def get_correlation_between_age_and_turnover(file_path):
     average_age_by_status = hr_data.groupby("Left_Company")["Age"].mean()
     return correlation, average_age_by_status
 
+
 def get_average_salary_between_left_and_right_company(file_path):
     hr_data = pd.read_csv(file_path)
     average_salary_by_status = hr_data.groupby("Left_Company")["Monthly_Salary"].mean()
     average_salary_by_status["diff_between_two"] = average_salary_by_status["Yes"] - average_salary_by_status["No"]
     return average_salary_by_status
 
+
+def get_experienced_vs_fidelity_employee(file_path):
+    return pd.read_csv(file_path).groupby("Left_Company")["Years_Experience"].mean()
+
+
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_average_salary_between_left_and_right_company(file_to_test))
+print(get_experienced_vs_fidelity_employee(file_to_test))
