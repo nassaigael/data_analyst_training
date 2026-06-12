@@ -1,10 +1,10 @@
 {
-    "name": "John Doe",
-    "age": 30,
-    "city": "Paris",
-    "skills": [
-        "Python",
-        "SQL",
-        "Machine Learning"
-    ]
+  "name": "John Doe",
+  "age": 30,
+  "city": "Paris",
+  "skills": [
+    "Python",
+    "SQL",
+    "Machine Learning"
+  ]
 }

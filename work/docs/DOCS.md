@@ -1,0 +1,26 @@
+# NOTE SUR LES TO DO PENDANT LE TODO :
+- 1
+- 2
+- 3
+- 4
+- 5 
+- 6
+## SUJET OU INDICATEURS CLES PRIORITAIRE :
+- 1
+- 2
+- 3
+- 4
+## EMPLACEMENT DE DATA :
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+## PREFERANCE TYPE DE GRAPHIQUES :
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6

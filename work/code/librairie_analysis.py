@@ -49,7 +49,7 @@ def get_store_with_highest_sale_children_book(file_path):
     children_book = "Children"
     sales_data = pd.read_csv(file_path)
     sales_data_children = sales_data[sales_data["Genre"] == children_book]
-    return sales_data_children.groupby("Store")["Units_Sold"].sum().idxmax()
+    return sales_data_children.groupby("Store")["Units_Sold"].sum_acc().idxmax()
 
 
 # 7 Quel est le livre le moins vendu ?
@@ -77,7 +77,7 @@ def compare_paris_and_marseille_sales(file_path):
     store_to_compare = [marseille_store, paris_store]
 
     selected_store_sales = sales_data[sales_data["Store"].isin(store_to_compare)]
-    units_sold_by_store = selected_store_sales.groupby("Store")["Units_Sold"].sum()
+    units_sold_by_store = selected_store_sales.groupby("Store")["Units_Sold"].sum_acc()
     store_with_highest_sales = units_sold_by_store.idxmax()
     return {
         "store_with_highest_sales": store_with_highest_sales,
@@ -103,24 +103,32 @@ def classify_book_by_popularity(file_path):
 # Usage example
 file_to_test = "E:/data_analyst/work/data/bookstore_sales.csv"
 
-print(get_store_with_highest_revenue(file_to_test))
-print("=" * 50)
-print(most_genre_hav_max_quantity(file_to_test))
-print("=" * 50)
-print(most_actif_week(file_to_test))
-print("=" * 50)
-print(most_book_sold_out(file_to_test))
-print("=" * 50)
-print(revenue_after_discount(file_to_test))
-print("=" * 50)
-print(get_store_with_highest_sale_children_book(file_to_test))
-print("=" * 50)
-print(get_book_with_bad_revenue(file_to_test))
-print("=" * 50)
-print(calculate_revenue(file_to_test))
-print("=" * 50)
-print(compare_paris_and_marseille_sales(file_to_test))
-print("=" * 50)
-print(calculate_discounted_transaction_percentage(file_to_test))
-print("=" * 50)
-print(classify_book_by_popularity(file_to_test))
+def extract_day_of_week(file_path):
+    df = pd.read_csv(file_path)
+    df["Date"] = pd.to_datetime(df["Date"])
+    df["DayOfWeek"] = df["Date"].dt.dayofweek
+    df.set_index("DayOfWeek")
+    return df
+
+print(extract_day_of_week(file_to_test))
+# print(get_store_with_highest_revenue(file_to_test))
+# print("=" * 50)
+# print(most_genre_hav_max_quantity(file_to_test))
+# print("=" * 50)
+# print(most_actif_week(file_to_test))
+# print("=" * 50)
+# print(most_book_sold_out(file_to_test))
+# print("=" * 50)
+# print(revenue_after_discount(file_to_test))
+# print("=" * 50)
+# print(get_store_with_highest_sale_children_book(file_to_test))
+# print("=" * 50)
+# print(get_book_with_bad_revenue(file_to_test))
+# print("=" * 50)
+# print(calculate_revenue(file_to_test))
+# print("=" * 50)
+# print(compare_paris_and_marseille_sales(file_to_test))
+# print("=" * 50)
+# print(calculate_discounted_transaction_percentage(file_to_test))
+# print("=" * 50)
+# print(classify_book_by_popularity(file_to_test))

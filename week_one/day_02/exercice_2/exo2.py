@@ -1,7 +1,7 @@
 from collections import Counter
 
-sentece = "data science python"
+sentence = "data science python"
 
-result = Counter(sentece.replace(" ", ""))
+result = Counter(sentence.replace(" ", ""))
 
 print(result)
