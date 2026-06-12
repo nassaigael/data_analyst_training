@@ -105,6 +105,24 @@ def get_most_stable_age_group(file_path):
     return most_stable_age_group, most_unstable_age_group
 
 
+def get_profile_of_employee_who_left(file_path):
+    hr_data = pd.read_csv(file_path)
+
+    employees_left = hr_data[hr_data["Left_Company"] == "Yes"]
+
+    profile = {
+        "average_age": employees_left["Age"].mean().round(1),
+        "average_experience": employees_left["Years_Experience"].mean().round(1),
+        "average_salary": employees_left["Monthly_Salary"].mean().round(1),
+        "average_performance_score": employees_left["Performance_Score"].mean().round(1),
+        "most_common_department": employees_left["Department"].mode()[0],
+        "most_common_education": employees_left["Education_Level"].mode()[0],
+        "most_common_gender": employees_left["Gender"].mode()[0],
+    }
+
+    return profile
+
+
 def get_count_of_female_employee(file_path):
     hr_data = pd.read_csv(file_path)
     return (hr_data["Gender"] == "Female").sum()
@@ -112,4 +130,4 @@ def get_count_of_female_employee(file_path):
 
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_most_stable_age_group(file_to_test))
+print(get_profile_of_employee_who_left(file_to_test))

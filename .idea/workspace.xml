@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="85262d3d-3c35-49bc-b288-7f229d29338c" name="Changes" comment="chore(week_one): clean up code and improve formatting across multiple exercises&#10;&#10;- Removed unnecessary blank lines and ensured proper indentation.&#10;- Standardized variable naming conventions and spacing for consistency.&#10;- Fixed minor formatting issues in notebooks and Python files.&#10;- Updated function calls in `librairie_analysis.py` to use `sum_acc` for correct aggregation logic.">
       <change beforePath="$PROJECT_DIR$/work/code/hr_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/work/code/hr_analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,61 +42,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000151531088" />
-      <entry key="S5" value="1.0011106859992414" />
-      <entry key="S10" value="1.0475469679875795" />
-      <entry key="S30" value="1.7876658952397326" />
-      <entry key="S60" value="3.347810084773186" />
-      <entry key="M2" value="6.961269560090717" />
-      <entry key="M5" value="18.528050132535043" />
-      <entry key="M10" value="38.26842057924122" />
-      <entry key="M15" value="58.26224689295947" />
-      <entry key="M30" value="112.54554177421542" />
-      <entry key="H1" value="190.34743103619263" />
-      <entry key="H2" value="299.095188310397" />
-      <entry key="H4" value="466.2246604615642" />
-      <entry key="D1" value="871.9468564417684" />
-      <entry key="W1" value="999.2061936799316" />
+      <entry key="MS100" value="1.1879355469022533E-279" />
+      <entry key="MS500" value="4.041115048715188E-56" />
+      <entry key="S2" value="4.139925046964811E-14" />
+      <entry key="S5" value="1.1418219692306562E-5" />
+      <entry key="S10" value="0.007531532413493042" />
+      <entry key="S30" value="0.6353527872352533" />
+      <entry key="S60" value="2.944423479125762" />
+      <entry key="M2" value="9.99905521906728" />
+      <entry key="M5" value="29.54234944913369" />
+      <entry key="M10" value="54.49833151066088" />
+      <entry key="M15" value="76.65141912246905" />
+      <entry key="M30" value="134.1083926883988" />
+      <entry key="H1" value="215.68552459514223" />
+      <entry key="H2" value="327.9888937106846" />
+      <entry key="H4" value="497.79388923669677" />
+      <entry key="D1" value="909.378269459408" />
+      <entry key="W1" value="1038.7870556711214" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="5.395284498463725E-32" />
-      <entry key="MS500" value="5.577028579959613E-7" />
-      <entry key="S2" value="0.02732755125436499" />
-      <entry key="S5" value="0.2369411924726019" />
-      <entry key="S10" value="0.4871615738768222" />
-      <entry key="S30" value="0.88096071880249" />
-      <entry key="S60" value="1.4334815604348015" />
-      <entry key="M2" value="2.7165925834523303" />
-      <entry key="M5" value="5.896322339053294" />
-      <entry key="M10" value="9.818869045895772" />
-      <entry key="M15" value="13.117914317241748" />
-      <entry key="M30" value="21.51452445305164" />
-      <entry key="H1" value="33.20879954129066" />
-      <entry key="H2" value="47.99999729018348" />
-      <entry key="H4" value="68.58515291461572" />
-      <entry key="D1" value="115.8265400478087" />
-      <entry key="W1" value="130.3049421008969" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000006161631" />
+      <entry key="S30" value="1.0010882367648286" />
+      <entry key="S60" value="1.0528478312807847" />
+      <entry key="M2" value="1.520284136604801" />
+      <entry key="M5" value="4.089829698398301" />
+      <entry key="M10" value="8.218371634985296" />
+      <entry key="M15" value="11.770558612784598" />
+      <entry key="M30" value="20.655068358260486" />
+      <entry key="H1" value="32.95808903933312" />
+      <entry key="H2" value="48.35865893489983" />
+      <entry key="H4" value="69.40881669735772" />
+      <entry key="D1" value="117.49477355247295" />
+      <entry key="W1" value="132.25160129105478" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1499479557902904E-6" />
-      <entry key="MS500" value="0.0648837667172585" />
-      <entry key="S2" value="0.5204999686653824" />
-      <entry key="S5" value="0.9521097413031674" />
-      <entry key="S10" value="1.3561315988533484" />
-      <entry key="S30" value="2.5849577001535273" />
-      <entry key="S60" value="4.705904857282416" />
-      <entry key="M2" value="9.593525782403614" />
-      <entry key="M5" value="24.33932121143442" />
-      <entry key="M10" value="48.010011861943504" />
-      <entry key="M15" value="71.30764054380843" />
-      <entry key="M30" value="133.99648455940698" />
-      <entry key="H1" value="223.50583751066378" />
-      <entry key="H2" value="347.0579578766447" />
-      <entry key="H4" value="534.7824084866553" />
-      <entry key="D1" value="987.7654156048013" />
-      <entry key="W1" value="1129.5098463450227" />
+      <entry key="MS100" value="1.796793680922331E-8" />
+      <entry key="MS500" value="0.028242272710971426" />
+      <entry key="S2" value="0.4099443550887186" />
+      <entry key="S5" value="0.6999968045758641" />
+      <entry key="S10" value="0.8435045956975266" />
+      <entry key="S30" value="1.5578273440624761" />
+      <entry key="S60" value="3.9332875426058482" />
+      <entry key="M2" value="11.461818267733321" />
+      <entry key="M5" value="33.56872321579469" />
+      <entry key="M10" value="62.650567312746816" />
+      <entry key="M15" value="88.35641988471006" />
+      <entry key="M30" value="154.70254957750288" />
+      <entry key="H1" value="248.59375379769617" />
+      <entry key="H2" value="376.31015982976845" />
+      <entry key="H4" value="567.1750529068004" />
+      <entry key="D1" value="1026.8649654587007" />
+      <entry key="W1" value="1171.0373509836884" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -133,7 +132,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "E:/data_analyst",
@@ -278,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781269490576</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="chore(week_one): clean up code and improve formatting across multiple exercises&#10;&#10;- Removed unnecessary blank lines and ensured proper indentation.&#10;- Standardized variable naming conventions and spacing for consistency.&#10;- Fixed minor formatting issues in notebooks and Python files.&#10;- Updated function calls in `librairie_analysis.py` to use `sum_acc` for correct aggregation logic.">
+      <option name="closed" value="true" />
+      <created>1781270698842</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1781270698842</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +320,9 @@
     <MESSAGE value="feat(hr_analysis): add gender turnover and female employee count functions&#10;&#10;- Added `get_difference_average_turnover_by_gender` to compute turnover differences by gender.&#10;- Added `get_count_of_female_employee` to calculate the count of female employees." />
     <MESSAGE value="feat(hr_analysis): add gender turnover and female employee count functions&#10;&#10;- Added `get_difference_average_turnover_by_gender` to calculate turnover rates by gender.&#10;- Added `get_count_of_female_employee` to count the number of female employees in the dataset." />
     <MESSAGE value="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(hr_analysis): add function for turnover rate by performance score&#10;&#10;- Added `get_turnover_rate_by_score` to calculate turnover rates grouped by performance scores.&#10;- Renamed `get_difference_average_turnover_by_gender` to `get_turnover_rate_by_gender` for clarity." />
+    <MESSAGE value="Merge remote-tracking branch 'origin/dev'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;" />
+    <MESSAGE value="chore(week_one): clean up code and improve formatting across multiple exercises&#10;&#10;- Removed unnecessary blank lines and ensured proper indentation.&#10;- Standardized variable naming conventions and spacing for consistency.&#10;- Fixed minor formatting issues in notebooks and Python files.&#10;- Updated function calls in `librairie_analysis.py` to use `sum_acc` for correct aggregation logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(week_one): clean up code and improve formatting across multiple exercises&#10;&#10;- Removed unnecessary blank lines and ensured proper indentation.&#10;- Standardized variable naming conventions and spacing for consistency.&#10;- Fixed minor formatting issues in notebooks and Python files.&#10;- Updated function calls in `librairie_analysis.py` to use `sum_acc` for correct aggregation logic." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/data_analyst$exo2.coverage" NAME="exo2 Coverage Results" MODIFIED="1781254871186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_02/exercice_1" />
@@ -322,7 +331,7 @@
     <SUITE FILE_PATH="coverage/data_analyst$data.coverage" NAME="data Coverage Results" MODIFIED="1781249070127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one" />
     <SUITE FILE_PATH="coverage/data_analyst$exo3.coverage" NAME="exo3 Coverage Results" MODIFIED="1781254349724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_03/exercice_1" />
     <SUITE FILE_PATH="coverage/data_analyst$exo1.coverage" NAME="exo1 Coverage Results" MODIFIED="1781255026929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_01/exercice_3" />
-    <SUITE FILE_PATH="coverage/data_analyst$hr_analysis.coverage" NAME="hr_analysis Coverage Results" MODIFIED="1781270442479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
+    <SUITE FILE_PATH="coverage/data_analyst$hr_analysis.coverage" NAME="hr_analysis Coverage Results" MODIFIED="1781271035146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work/code" />
     <SUITE FILE_PATH="coverage/data_analyst$exo4.coverage" NAME="exo4 Coverage Results" MODIFIED="1781255049420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_one/day_01/exercice_2" />
   </component>
 </project>
