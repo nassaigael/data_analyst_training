@@ -33,6 +33,18 @@ def get_experienced_vs_fidelity_employee(file_path):
     return pd.read_csv(file_path).groupby("Left_Company")["Years_Experience"].mean()
 
 
+def get_turnover_rate_by_education_level(file_path):
+    hr_data = pd.read_csv(file_path)
+    turnover_by_education_level = hr_data.groupby("Education_Level").agg(
+        employee_left=("Left_Company", lambda x: (x == "Yes").sum()),
+        total_employees=("Employee_ID", "count")
+    )
+    turnover_by_education_level["turnover_rate"] = (
+            turnover_by_education_level["employee_left"] / turnover_by_education_level["total_employees"] * 100
+    )
+    return turnover_by_education_level["turnover_rate"]
+
+
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_experienced_vs_fidelity_employee(file_to_test))
+print(get_turnover_rate_by_education_level(file_to_test))
