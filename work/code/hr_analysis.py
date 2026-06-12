@@ -55,6 +55,7 @@ def get_turnover_rate_by_gender(file_path):
         "total_employees"]) * 100
     return turnover_by_gender
 
+
 def get_turnover_rate_by_score(file_path):
     hr_data = pd.read_csv(file_path)
     turnover_by_score = hr_data.groupby("Performance_Score").agg(
@@ -65,13 +66,23 @@ def get_turnover_rate_by_score(file_path):
         "total_employees"]) * 100
     return turnover_by_score["turnover_rate"]
 
+
+def get_average_seniority_of_employees_left(file_path):
+    hr_data = pd.read_csv(file_path)
+    hr_data["Hiring_Date"] = pd.to_datetime(hr_data["Hiring_Date"])
+    baseline_date = pd.to_datetime("2024-12-31")
+    employees_left = hr_data[hr_data["Left_Company"] == "Yes"].copy()
+    employees_left["seniority_days"] = (baseline_date - employees_left["Hiring_Date"]).dt.days
+    employees_left["seniority_months"] = employees_left["seniority_days"] / 30.44
+    average_seniority_months = employees_left["seniority_months"].mean().round(2)
+    return average_seniority_months
+
+
 def get_count_of_female_employee(file_path):
     hr_data = pd.read_csv(file_path)
     return (hr_data["Gender"] == "Female").sum()
 
 
-
-
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_turnover_rate_by_score(file_to_test))
+print(get_average_seniority_of_employees_left(file_to_test))
