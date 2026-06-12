@@ -45,6 +45,22 @@ def get_turnover_rate_by_education_level(file_path):
     return turnover_by_education_level["turnover_rate"]
 
 
+def get_difference_average_turnover_by_gender(file_path):
+    hr_data = pd.read_csv(file_path)
+    turnover_by_gender = hr_data.groupby("Gender").agg(
+        employee_left=("Left_Company", lambda x: (x == "Yes").sum()),
+        total_employees=("Employee_ID", "count")
+    )
+    turnover_by_gender["turnover_rate"] = (turnover_by_gender["employee_left"] / turnover_by_gender[
+        "total_employees"]) * 100
+    return turnover_by_gender
+
+
+def get_count_of_female_employee(file_path):
+    hr_data = pd.read_csv(file_path)
+    return (hr_data["Gender"] == "Female").sum()
+
+
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_turnover_rate_by_education_level(file_to_test))
+print(get_count_of_female_employee(file_to_test))
