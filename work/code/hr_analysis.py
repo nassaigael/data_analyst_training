@@ -78,6 +78,33 @@ def get_average_seniority_of_employees_left(file_path):
     return average_seniority_months
 
 
+def get_most_stable_age_group(file_path):
+    hr_data = pd.read_csv(file_path)
+
+    hr_data["Age_Group"] = pd.cut(
+        hr_data["Age"],
+        bins=[20, 30, 40, 50],
+        labels=["20-30", "30-40", "40-50"],
+        right=False
+    )
+
+    turnover_by_age_group = hr_data.groupby("Age_Group", observed=False).agg(
+        employee_left=("Left_Company", lambda x: (x == "Yes").sum()),
+        total_employees=("Employee_ID", "count")
+    )
+
+    turnover_by_age_group["turnover_rate"] = (
+            turnover_by_age_group["employee_left"]
+            / turnover_by_age_group["total_employees"]
+            * 100
+    )
+
+    most_stable_age_group = turnover_by_age_group["turnover_rate"].idxmin()
+    most_unstable_age_group = turnover_by_age_group["turnover_rate"].idxmax()
+
+    return most_stable_age_group, most_unstable_age_group
+
+
 def get_count_of_female_employee(file_path):
     hr_data = pd.read_csv(file_path)
     return (hr_data["Gender"] == "Female").sum()
@@ -85,4 +112,4 @@ def get_count_of_female_employee(file_path):
 
 # Usage example
 file_to_test = "E:/data_analyst/work/data/hr_employees.csv"
-print(get_average_seniority_of_employees_left(file_to_test))
+print(get_most_stable_age_group(file_to_test))
